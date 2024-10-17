@@ -1,0 +1,21 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    letterSpacing: {
+      tight: '-.015em'
+    },
+    extend: {
+      height: {
+        'half-screen': '50vh'
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
