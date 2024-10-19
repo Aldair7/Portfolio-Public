@@ -1,5 +1,5 @@
 import React from "react";
-
+import Member from "./member";
 const AboutUs: React.FC = () => {
   return (
     <section className={`flex flex-col bg-white py-20 text-3x md: text-4xl`}>
@@ -13,10 +13,7 @@ const AboutUs: React.FC = () => {
         <h2>Our Team</h2>
         <div className="mt-2"> the thing</div>
         <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 lg:gap-20">
-          <div>Member</div>
-          <div>Member</div>
-          <div>Member</div>
-          <div>Member</div>
+          <Member id="aldair" name="Aldair" socialId="@AldairRamos" link="https://www.linkedin.com/in/aldair-ramos/"></Member>
 
         </div>
       </div>
