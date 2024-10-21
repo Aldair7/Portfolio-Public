@@ -34,7 +34,9 @@ export const TileWrapper: React.FC<WrapperProps> = ({
   }
   return (
     <TileContext.Provider value={{ numOfPages, currentPage }}>
-      <div ref={refContainer} className="relative bg-black text-white"> {children}</div>
+      <div ref={refContainer} className="relative bg-black text-white" style={{
+        height: numOfPages * 100 + 'vh'
+      }}> {children}</div>
     </TileContext.Provider>
   )
 }
@@ -63,6 +65,6 @@ export const Tile: React.FC<Props> = ({ page, renderContent }) => {
   }
 
   return (
-    <div ref={refContainer} className="absolute top-0 w-full" style={{ pointerEvents: progress >= 0 || progress >= 1 ? 'none' : undefined }}>{renderContent({ progress })}</div>
+    <div ref={refContainer} className="absolute top-0 w-full" style={{ pointerEvents: progress <= 0 || progress >= 1 ? 'none' : undefined, opacity }}>{renderContent({ progress })}</div>
   )
 }
