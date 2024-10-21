@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ScrollObserver from "../../utils/scroll-observer";
+import SizeObserver from "../../utils/size-observer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,9 +30,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ScrollObserver>        {children}
+        <SizeObserver>
+          <ScrollObserver>
+            {children}
+          </ScrollObserver>
+        </SizeObserver>
 
-        </ScrollObserver>
 
       </body>
     </html>
